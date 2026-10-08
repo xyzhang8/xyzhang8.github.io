@@ -12,23 +12,23 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#work">Skip to content</a>
 
 <header class="masthead">
-  <a class="mark" href="index.html" aria-label="Home">
+  <a class="mark" href="#top" aria-label="Back to top">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
       <rect x="1.5" y="1.5" width="21" height="21" fill="none" stroke="#fff" stroke-width="2.5"/>
       <circle cx="12" cy="12" r="4" fill="#fff"/>
     </svg>
   </a>
-  <nav class="nav" aria-label="Main">
-    <a href="work.html">Work</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<main id="main">
+<main id="top">
 
   <div class="hero fade">
     <h1 class="wordmark">xin&nbsp;yue<br>zhang</h1>
@@ -39,20 +39,28 @@
     </p>
   </div>
 
-  <div class="work">
+  <!-- ============================= WORK ============================= -->
+  <section id="work" class="work" aria-labelledby="work-heading">
+    <h2 id="work-heading" class="section-title">Work</h2>
 
     <article class="project">
       <figure>
         <img src="assets/placeholder-1.svg" alt="Placeholder — replace with an image from the thesis project." loading="lazy" width="1600" height="1000">
       </figure>
       <div class="caption">
-        <h2>Depth from blur</h2>
+        <h3>Depth from blur</h3>
         <p class="meta">MSc thesis</p>
       </div>
       <p>
-        A validation pipeline for super-resolution microscopy simulations, built with
-        my research team. Against a conventional calibration, it reduced the error in
-        depth determination by up to 99&nbsp;percent in simulation.
+        Super-resolution microscopy reaches a resolution the optics alone should not allow,
+        but only if you know how far a feature sits from the focal plane. Working within my
+        research team, I built the validation pipeline for the simulations: ground truth in,
+        reconstructed depth out, error measured across the parameter range.
+      </p>
+      <p>
+        Against a conventional calibration, the error in depth determination fell by up to
+        99&nbsp;percent in simulation. I came to the problem from mechanical engineering and
+        control, and learned the microscopy on the way in.
       </p>
       <ul class="tags">
         <li>simulation</li><li>validation</li><li>optics</li><li>control</li>
@@ -64,14 +72,19 @@
         <img src="assets/placeholder-2.svg" alt="Placeholder — replace with a diagram of the monitoring data flow." loading="lazy" width="1600" height="1000">
       </figure>
       <div class="caption">
-        <h2>The indicators that never turned green</h2>
+        <h3>The indicators that never turned green</h3>
         <p class="meta">Batenburg Bellt</p>
       </div>
       <p>
-        A production monitoring system showed two processes as idle while they were
-        plainly running on the floor. Reading the code, the configuration and the PLC
-        address documentation side by side turned up a database table mapping signals
-        to the wrong addresses. Fixed in the data, with no change to application code.
+        A client's production monitoring system carried PLC signals through services and a
+        MySQL database to an operator screen. Two status indicators stayed dark while both
+        processes were visibly running on the floor.
+      </p>
+      <p>
+        I put the code, the configuration and the PLC address documentation side by side and
+        found a database table mapping the signals to the wrong addresses. The fix was
+        corrected rows — no application code touched. I was in front of the client in my
+        first week.
       </p>
       <ul class="tags">
         <li>PLC</li><li>MySQL</li><li>debugging</li><li>industrial software</li>
@@ -83,25 +96,102 @@
         <img src="assets/placeholder-3.svg" alt="Placeholder — replace with an image for a third project." loading="lazy" width="1600" height="1000">
       </figure>
       <div class="caption">
-        <h2>Third project</h2>
+        <h3>Third project</h3>
         <p class="meta">Year</p>
       </div>
       <p>
-        Replace this block with something you want to show. One or two sentences on
-        what the problem was, what you built, and what changed because of it.
+        Replace this block with something you want to show — a course project, something you
+        built on your own, anything with a before and an after. Two short paragraphs: what was
+        wrong or unknown, what you did, what changed.
       </p>
       <ul class="tags">
         <li>tag</li><li>tag</li><li>tag</li>
       </ul>
     </article>
+  </section>
 
-  </div>
+  <!-- ============================ ABOUT ============================= -->
+  <section id="about" aria-labelledby="about-heading">
+    <h2 id="about-heading" class="section-title">About</h2>
+
+    <p>
+      I am a mechanical engineer in Amsterdam. What draws me in is the seam between a physical
+      process and the data that is supposed to describe it — signals, databases, measurements,
+      models — and the work of making the two agree.
+    </p>
+    <p>
+      My thesis was about making an uncertain measurement certain through modelling and data.
+      At Batenburg Bellt I met the same problem in industrial software, where a monitoring
+      system showed something other than what was happening on the floor. I like bringing data
+      from different sources together into information you can actually steer a process by.
+    </p>
+    <p>
+      Before that, years of customer-facing work taught me to explain technical things plainly:
+      what is covered, how the repair will go, why the problem happened in the first place.
+      I speak Dutch and English fluently, and I pick up new technology quickly.
+    </p>
+
+    <div class="subsection">
+      <p class="eyebrow">Experience</p>
+      <ul class="entries">
+        <li>
+          <div class="row">
+            <h3>Batenburg Bellt</h3>
+            <p class="meta">Industrial software</p>
+          </div>
+          <p>
+            Production monitoring systems built on PLC signals, services and MySQL. Debugging
+            across the stack, with direct client contact.
+          </p>
+        </li>
+        <li>
+          <div class="row">
+            <h3>Apple</h3>
+            <p class="meta">Customer-facing</p>
+          </div>
+          <p>
+            Explaining coverage, repairs and root causes to customers — including the ones who
+            arrived angry.
+          </p>
+        </li>
+        <li>
+          <div class="row">
+            <h3>TU Delft</h3>
+            <p class="meta">Host</p>
+          </div>
+          <p>First point of contact for everyone coming through the door.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <p class="eyebrow">Tools</p>
+      <ul class="tags">
+        <li>MySQL</li><li>SQL</li><li>Python</li><li>MATLAB</li>
+        <li>PLC signals</li><li>simulation</li><li>Dutch / English</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================== CONTACT ============================ -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="section-title">Contact</h2>
+
+    <p class="centred-note">Open to roles in data, process automation and industrial systems.</p>
+
+    <ul class="contact-list">
+      <li><a href="mailto:xinyooxyz@gmail.com">xinyooxyz@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/" rel="me">LinkedIn</a></li>
+      <li><a href="https://github.com/" rel="me">GitHub</a></li>
+    </ul>
+  </section>
 
 </main>
 
 <footer>
-  <p>Amsterdam · <a href="contact.html">Get in touch</a></p>
+  <p>Amsterdam · <a href="#top">Back to top</a></p>
 </footer>
 
+<script src="nav.js" defer></script>
 </body>
 </html>

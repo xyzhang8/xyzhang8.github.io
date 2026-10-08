@@ -1,15 +1,18 @@
 # Portfolio — Xin Yue Zhang
 
-A static site. No build step, no dependencies: plain HTML and one stylesheet.
+A static one-page site. No build step, no dependencies: one HTML file, one
+stylesheet, one small script.
 
 ```
-index.html      home — wordmark + three project blocks
-work.html       the projects, longer
-about.html      bio, experience, tools
-contact.html    email and links
+index.html      the whole site — hero, #work, #about, #contact
 styles.css      all styling (colours are CSS variables at the top)
+nav.js          highlights the nav link for the section you're looking at
 assets/         logo mark + placeholder images
 ```
+
+The nav links are plain anchors (`#work`, `#about`, `#contact`), so they jump
+to the matching section and keep working with JavaScript disabled — `nav.js`
+only adds the highlight.
 
 ## Preview locally
 
@@ -40,7 +43,18 @@ git push -u origin main
 - **Images.** `assets/placeholder-*.svg` are stand-ins. Drop in real images (jpg, png or
   webp), update the `src` and the `alt` text on each `<img>`, and keep the `width`/`height`
   attributes roughly matching the real dimensions so the page doesn't jump while loading.
-- **The third project** on `index.html` and `work.html` is an empty template.
-- **Links** on `contact.html` point at bare linkedin.com / github.com — add your handles.
+- **The third project** in the `#work` section is an empty template.
+- **Links** in `#contact` point at bare linkedin.com / github.com — add your handles.
 - **Colours** are the variables at the top of `styles.css`. `--glow` drives the radial
   background; raising it toward a hue (e.g. `#2a1030`) brings colour back in.
+- **Nav bar height** is `--bar`. If you change it, anchor offsets follow automatically —
+  `scroll-padding-top` is derived from it.
+
+## Adding a section
+
+Three steps, all in `index.html`:
+
+1. `<section id="newthing" aria-labelledby="newthing-heading">` with an
+   `<h2 id="newthing-heading" class="section-title">` inside.
+2. Add `<a href="#newthing">New thing</a>` to the `.nav`.
+3. Nothing else — `nav.js` picks up any nav link whose `href` starts with `#`.
