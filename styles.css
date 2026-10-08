@@ -1,0 +1,309 @@
+/* ---------------------------------------------------------------
+   Xin Yue Zhang — portfolio
+   Single centred column, monochrome, monospace.
+   --------------------------------------------------------------- */
+
+:root {
+  --bg:        #0a0a0a;
+  --glow:      #242424;
+  --ink:       #ffffff;
+  --ink-dim:   #9a9a9a;
+  --rule:      #2e2e2e;
+
+  --col:       680px;   /* centred column width */
+  --gutter:    16px;    /* phone side gutter */
+
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono",
+          Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0 var(--gutter) 96px;
+  background-color: var(--bg);
+  /* the glow sits behind everything and does not scroll away */
+  background-image: radial-gradient(
+    110% 70% at 50% 22%,
+    var(--glow) 0%,
+    var(--bg) 62%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  overflow-x: hidden;
+}
+
+/* --- skip link ------------------------------------------------- */
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 8px 14px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 2px;
+}
+
+/* --- header / nav ---------------------------------------------- */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 18px;
+  padding: 28px 0 0;
+}
+
+.mark {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.mark svg { display: block; width: 100%; height: 100%; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  font-size: 14px;
+}
+.nav a:hover,
+.nav a:focus-visible { color: var(--ink-dim); }
+.nav a[aria-current="page"] {
+  text-decoration-thickness: 2px;
+}
+
+/* --- hero ------------------------------------------------------ */
+
+.hero {
+  text-align: center;
+  padding: 120px 0 0;
+}
+
+.wordmark {
+  margin: 0;
+  font-size: clamp(44px, 13vw, 104px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.hero .tagline {
+  margin: 22px 0 0;
+  font-size: clamp(15px, 3.4vw, 21px);
+  letter-spacing: 0.22em;
+  text-transform: lowercase;
+}
+
+.hero .blurb {
+  margin: 30px auto 0;
+  max-width: 46ch;
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+/* --- generic page shell ---------------------------------------- */
+
+main {
+  max-width: var(--col);
+  margin: 0 auto;
+}
+
+.page-head {
+  text-align: center;
+  padding: 96px 0 0;
+}
+
+.page-head h1 {
+  margin: 0;
+  font-size: clamp(30px, 8vw, 54px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.page-head p {
+  margin: 20px auto 0;
+  max-width: 46ch;
+  font-size: 13px;
+  color: var(--ink-dim);
+}
+
+section { padding-top: 88px; }
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+p { margin: 0 0 16px; }
+
+a { color: var(--ink); text-underline-offset: 3px; }
+
+.eyebrow {
+  margin: 0 0 28px;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.meta {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+
+/* --- work blocks ------------------------------------------------ */
+
+.work {
+  display: grid;
+  gap: 72px;
+  padding-top: 88px;
+}
+
+.project figure {
+  margin: 0 0 20px;
+}
+
+.project img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  background: #111;
+}
+
+.project .caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.project .caption .meta { margin-left: auto; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 14px 0 0;
+  list-style: none;
+}
+
+.tags li {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-dim);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+/* --- experience list -------------------------------------------- */
+
+.entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 32px;
+}
+
+.entries li {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+}
+
+.entries .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  align-items: baseline;
+}
+
+.entries .row .meta { margin-left: auto; }
+
+.entries p { margin: 10px 0 0; font-size: 13px; color: var(--ink-dim); }
+
+/* --- contact ---------------------------------------------------- */
+
+.contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  text-align: center;
+}
+
+.contact-list a { font-size: 16px; }
+
+/* --- footer ------------------------------------------------------ */
+
+footer {
+  max-width: var(--col);
+  margin: 112px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+
+footer a { color: var(--ink-dim); }
+
+/* --- motion ------------------------------------------------------ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade {
+    animation: fade-up 0.7s ease both;
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: none; }
+  }
+}
+
+/* --- phone -------------------------------------------------------- */
+
+@media (max-width: 560px) {
+  .hero { padding-top: 76px; }
+  section, .work { padding-top: 64px; }
+  .project .caption .meta,
+  .entries .row .meta { margin-left: 0; width: 100%; }
+}
