@@ -1,2 +1,16 @@
 .DS_Store
 .claude/
+
+# --- large media sources -------------------------------------------------
+# Keep these on disk, out of git history. Once a big binary is committed it
+# stays in every clone forever, even if you delete the file later.
+#
+# NOTE: core.ignorecase is true on macOS, so these patterns already match any
+# capitalisation. Do not add an uppercase twin like *.MP4, it would also
+# swallow the lowercase pendulum.mp4 that the site actually serves.
+
+# Camera originals. The site serves the compressed exports instead.
+*.mov
+
+# Superseded: replaced by pendulum.mp4 + pendulum.webm (31 MB -> 4 MB).
+media/pendulum.gif
