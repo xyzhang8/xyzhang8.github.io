@@ -187,6 +187,19 @@ hr {
   color: var(--ink-dim);
 }
 
+.hero .portrait {
+  width: clamp(120px, 26vw, 170px);   /* min, preferred, max */
+  margin: 28px auto 0;                /* auto on both sides centres it */
+}
+
+.hero .portrait img {
+  display: block;
+  width: 100%;          /* fill the figure, never the page */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;    /* crop to square instead of squashing */
+  border-radius: 50%;   /* delete this line if you want a square */
+}
 /* --- sections ---------------------------------------------------- */
 
 main {
