@@ -9,3 +9,7 @@ styles.css    all styling, theme colours are the variables at the top
 nav.js        highlights the nav link for the section in view
 media/        images, video and the vectorised handwriting
 ```
+
+# How to access the portfolio
+
+The portfolio can be accessed at https://xyzhang8.github.io
