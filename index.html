@@ -152,6 +152,26 @@ as well as the occasional dance to groovy techno tunes!
     <li>IMU</li><li>GNSS</li><li>Data processing</li><li>Python</li>
   </ul>
     </article>
+    </article>
+      <article class="project">
+      <figure>
+        <img src="media/validation.svg" alt="System Identification with a regularized Volterra Tensor
+Network." loading="lazy" width="845" height="845">
+      </figure>
+  <div class="caption">
+    <h3>System Identification with a regularized Volterra Tensor
+Network</h3>
+  </div>
+  <p>Black-box modelling of a nonlinear system using a Volterra tensor network, with a tensor train decomposition to avoid the exponential growth in the number of coefficients.</p>
+
+  <p>
+    Performed system identification on the <a href="https://www.nonlinearbenchmark.org/benchmarks/cascaded-tanks">Cascaded Tanks with Overflow</a> benchmark dataset with a Volterra series. The number of coefficients of a Volterra model grows exponentially with model order and memory, so they were compressed into a tensor train. Derived the regularized least-squares update for fitting one core at a time (Alternating Least Squares), and a rank-adaptive version (Modified Alternating Least Squares), the latter of which was only derived but not implemented. Implemented the regularized ALS in MATLAB, including a simulation function that predicts the output without rebuilding the full Volterra kernels. Studied rank against regularization strength over random initializations. High ranks without regularization overfit, regularization reduces this but can underfit at very low ranks, and low ranks worked well and were the fastest.
+
+  <ul class="tags">
+    <li>Tensor Train decomposition</li><li>Tensor networks</li><li>System Identification</li><li>Regularization</li><li>Alternating Least Squares</li><li>MATLAB</li>
+
+  </ul>
+    </article>
   </section>
 
   <!-- ============================ Education ============================= -->
